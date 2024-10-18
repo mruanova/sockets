@@ -14,7 +14,7 @@ var server = app.listen(8000, function() {
 // this is a new line we're adding AFTER our server listener
 // take special note how we're passing the server
 // variable. unless we have the server variable, this line will not work!!
-var io = require('socket.io').listen(server);
+var io = require('socket.io')(server);
 
 // Whenever a connection event happens (the connection event is built in) run the following code
 io.sockets.on('connection', function (socket) {
